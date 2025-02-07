@@ -2,8 +2,8 @@ import React from "react";
 
 const Community = () => {
   return (
-    <div className=" bg-gray-100 flex flex-col items-center justify-center p-6">
-      <div className="bg-white shadow-lg rounded-2xl p-8 max-w-3xl w-full text-center">
+    <div className="flex flex-col items-center justify-center p-6">
+      <div className="bg-white  p-8 max-w-3xl w-full text-center">
         <h1 className="text-3xl font-bold text-gray-800">Welcome to Our Community</h1>
         <p className="mt-4 text-gray-600 text-lg">
           Join like-minded individuals, share knowledge, and grow together.

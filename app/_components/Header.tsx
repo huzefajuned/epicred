@@ -2,18 +2,20 @@
 import Image from "next/image";
 import { SunMoon } from "lucide-react";
 import logo from "../assets/logo.svg";
-import { filterList, navLinks } from "../page";
+import { filterList, navLinks } from "../_utils/common";
 import SalaryRange from "./Salaray-Range";
+import { NavInterface } from "../_types/types";
+import React from "react";
 
-const Header = ({
-  activeComponent,
-  setActiveComponent,
-}: {
-  activeComponent: any;
-  setActiveComponent: any;
-}) => {
+interface HeaderProps {
+  activeComponent: React.FC | null; // Allow null for default state
+  setActiveComponent: (component: React.FC | null) => void; // Accepts a component function
+}
+
+
+const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
   return (
-    <div className="bg-black flex flex-col justify-around   text-white shadow-lg w-full   rounded-xl">
+    <div className="bg-black flex flex-col justify-around  text-white w-full ">
       {/* Top section with logo and navigation */}
       <div className="flex flex-row items-center justify-between px-16 py-6 border-b-[1px] border-gray-600">
         {/* Logo */}
@@ -29,7 +31,7 @@ const Header = ({
 
         {/* Navigation Links */}
         <nav className="flex gap-6">
-          {navLinks.map((nav) => (
+          {navLinks.map((nav: NavInterface) => (
             <button
               key={nav.id}
               onClick={() => setActiveComponent(nav.component)}
@@ -66,11 +68,11 @@ const Header = ({
         {filterList.map((list) => (
           <div
             key={list.id}
-            className="flex flex-row justify-start  items-center gap-3  border-gray-600 border-r-2 w-48   py-5   cursor-pointer"
+            className="flex flex-row justify-start  items-center gap-3  border-gray-600 border-r-[1px] w-48   py-5   cursor-pointer"
           >
-            <span className="text-2xl ml-2">{list.icon}</span>
-            <span className="text-xl">{list.title}</span>
-            <span className="ml-2">{list.icon2}</span>
+            <span className="text-2xl ml-2">{React.createElement( list?.icon)}</span>
+            <span className="text-xl">{list?.title}</span>
+            <span className="ml-2">{ React.createElement(list?.icon2)}</span>
           </div>
         ))}
 
