@@ -1,11 +1,14 @@
 "use client";
 import Image from "next/image";
-import { SunMoon } from "lucide-react";
+import {  Settings, BellRing } from "lucide-react";
 import logo from "../assets/logo.svg";
 import { filterList, navLinks } from "../_config/app.config";
 import SalaryRange from "./Salaray-Range";
 import { FilterItem, NavInterface } from "../_types/types";
 import { Dispatch, JSX, SetStateAction } from "react";
+import LoginButton from "./ui/Login-Button";
+import { useAuth } from "../context/AuthProvider";
+import UserAvatar from "./ui/User-Avatar";
 
 interface HeaderProps {
   activeComponent: JSX.Element;
@@ -13,6 +16,7 @@ interface HeaderProps {
 }
 
 const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
+  const { user } = useAuth();
   return (
     <div className="bg-black flex flex-col justify-around  text-white w-full ">
       {/* Top section with logo and navigation */}
@@ -52,12 +56,13 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
 
         {/*   Theme Toggle */}
         <div className="flex items-center gap-4">
-          <div className="flex gap-2 cursor-pointer">
-            <SunMoon className="" />
+          <div className="flex justify-between  items-center gap-4 cursor-pointer px-4 py-3">
+            {/* auth user */}
+            {user ? <UserAvatar  classname=""/> : <LoginButton />}
 
-            <SunMoon className="" />
+            <Settings className="" />
 
-            <SunMoon className="" />
+            <BellRing className="" />
           </div>
         </div>
       </div>
