@@ -1,16 +1,16 @@
-import React, {  ReactNode } from "react";
+import  { JSX } from "react";
 
 export interface NavInterface {
   id: number;
   title: string;
-  component: React.FC;
+  component:JSX.Element;
 }
 
 export interface FilterItem {
   id: number;
-  icon: ReactNode;
+  icon: JSX.Element;
   title: string;
-  icon2: ReactNode;
+  icon2: JSX.Element;
 }
 
 //  for JOBS

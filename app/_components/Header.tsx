@@ -2,16 +2,15 @@
 import Image from "next/image";
 import { SunMoon } from "lucide-react";
 import logo from "../assets/logo.svg";
-import { filterList, navLinks } from "../_utils/common";
+import { filterList, navLinks } from "../_config/app.config";
 import SalaryRange from "./Salaray-Range";
-import { NavInterface } from "../_types/types";
-import React from "react";
+import { FilterItem, NavInterface } from "../_types/types";
+import { Dispatch, JSX, SetStateAction } from "react";
 
 interface HeaderProps {
-  activeComponent: React.FC | null; // Allow null for default state
-  setActiveComponent: (component: React.FC | null) => void; // Accepts a component function
+  activeComponent: JSX.Element;
+  setActiveComponent: Dispatch<SetStateAction<JSX.Element>>;
 }
-
 
 const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
   return (
@@ -65,14 +64,14 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
 
       {/* Bottom section with filters */}
       <div className="flex  flex-row gap-7 justify-between px-16 py-6  w-full">
-        {filterList.map((list) => (
+        {filterList.map((list: FilterItem) => (
           <div
             key={list.id}
             className="flex flex-row justify-start  items-center gap-3  border-gray-600 border-r-[1px] w-48   py-5   cursor-pointer"
           >
-            <span className="text-2xl ml-2">{React.createElement( list?.icon)}</span>
-            <span className="text-xl">{list?.title}</span>
-            <span className="ml-2">{ React.createElement(list?.icon2)}</span>
+            <span className="text-2xl ml-2">{list.icon}</span>
+            <span className="text-xl">{list.title}</span>
+            <span className="ml-2">{list.icon2}</span>
           </div>
         ))}
 
