@@ -1,15 +1,13 @@
 "use client";
-import { JSX, useEffect, useState } from "react";
+import { JSX, useState } from "react";
 import Header from "./_components/Header";
 import Jobs from "./_components/Jobs";
 import HomeSkeleton from "./_components/skeletons/Home-Skeleton";
+import { useAuth } from "./context/AuthProvider";
 
 export default function Home() {
   const [activeComponent, setActiveComponent] = useState<JSX.Element>(<Jobs />);
-  const [loading, setLoading] = useState<boolean>(true);
-  useEffect(() => {
-    setLoading(false);
-  }, []);
+  const { loading } = useAuth();
 
   if (loading) return <HomeSkeleton />;
 

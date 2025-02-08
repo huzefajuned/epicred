@@ -1,4 +1,4 @@
-"use client"; // Ensure this is at the top to avoid SSR issues
+"use client"; 
 
 import {
   createContext,
@@ -14,6 +14,7 @@ import toast from "react-hot-toast";
 // Define the AuthContext type
 interface AuthContextType {
   user: User | null;
+  loading: boolean;
   signInWithGoogle: () => Promise<void>;
   logout: () => Promise<void>;
 }
@@ -22,6 +23,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const signInWithGoogle = async () => {
     try {
@@ -48,12 +50,13 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
     return () => unsubscribe();
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, logout, signInWithGoogle }}>
+    <AuthContext.Provider value={{ user, loading, logout, signInWithGoogle }}>
       {children}
     </AuthContext.Provider>
   );

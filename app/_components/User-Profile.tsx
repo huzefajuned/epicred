@@ -11,6 +11,8 @@ const UserProfile = () => {
         <Image
           src={user?.photoURL || "https://via.placeholder.com/150"}
           alt="Profile"
+          width={100}
+          height={100}
           className="w-24 h-24 mx-auto rounded-full shadow-md border"
         />
         <h2 className="mt-4 text-3xl font-semibold text-black">
