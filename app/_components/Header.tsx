@@ -1,14 +1,15 @@
 "use client";
 import Image from "next/image";
-import { Settings, BellRing } from "lucide-react";
+import { Settings, BellRing, MapPinHouse } from "lucide-react";
 import logo from "../assets/logo.svg";
 import { filterList, navLinks } from "../_config/app.config";
 import SalaryRange from "./Salaray-Range";
 import { FilterItem, NavInterface } from "../_types/types";
-import { Dispatch, JSX, SetStateAction } from "react";
+import { Dispatch, JSX, SetStateAction, useState } from "react";
 import LoginButton from "./ui/Login-Button";
 import { useAuth } from "../context/AuthProvider";
 import UserAvatar from "./ui/User-Avatar";
+import UserDropdown from "./ui/User-Dropdown";
 
 interface HeaderProps {
   activeComponent: JSX.Element;
@@ -17,6 +18,8 @@ interface HeaderProps {
 
 const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
   const { user } = useAuth();
+  const [visibleDropdown, setVisibleDropdown] = useState<boolean>(false);
+
   return (
     <div className="bg-black flex flex-col justify-around  text-white w-full ">
       {/* Top section with logo and navigation */}
@@ -51,7 +54,7 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
 
         {/* Location */}
         <div className="flex items-center gap-4">
-          <span className="">Dummy Location</span>
+          <MapPinHouse /> <span className=""> New York, NY</span>
         </div>
 
         {/*   Theme Toggle */}
@@ -61,7 +64,10 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
             {user ? (
               <>
                 <UserAvatar classname="" />
-                <Settings className="" />
+                <Settings
+                  className=""
+                  onClick={() => setVisibleDropdown(true)}
+                />
                 <BellRing className="" />{" "}
               </>
             ) : (
@@ -69,6 +75,9 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
             )}
           </div>
         </div>
+        {visibleDropdown && (
+          <UserDropdown setVisibleDropdown={setVisibleDropdown} />
+        )}
       </div>
 
       {/* Bottom section with filters */}
