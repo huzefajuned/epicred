@@ -4,6 +4,8 @@ import jobs from "../Data/fake-data.json";
 import Profile from "./Profile";
 import { JobInterface } from "../_types/types";
 import Modal from "./Modal";
+import { useAuth } from "../context/AuthProvider";
+import toast from "react-hot-toast";
 
 type FilterOptions = {
   [key: string]: string[];
@@ -14,10 +16,21 @@ const filters: FilterOptions = {
   "Employment Type": ["Full Day", "Flexible Schedule", "Distant Work"],
 };
 const Jobs = () => {
+  const { user } = useAuth();
   const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [selectedJob, setSelectedJob] = useState<JobInterface | null>(null);
   const onClose = () => {
     setIsVisible(false);
   };
+
+  const onClickJob = (job: JobInterface) => {
+    if (!user) {
+      toast.error("please login to apply! 🥺");
+    }
+    setIsVisible(true);
+    setSelectedJob(job);
+  };
+
   return (
     <div className="flex flex-row gap-20 w-full overflow-scroll h-[70vh]  p-6">
       {/*  */}
@@ -60,62 +73,67 @@ const Jobs = () => {
           {jobs.map((job: JobInterface) => (
             <div
               key={job.id}
-              className="flex flex-col bg-white p-10 rounded-xl shadow-md border border-gray-200 w-full md:w-[35%] lg:w-[26%] relative"
+              className="flex flex-col bg-white justify-between gap-5 p-10 rounded-xl shadow-md border border-gray-200 w-full md:w-[35%] lg:w-[27%] relative"
             >
               {/* Bookmark Icon */}
               <button className="absolute top-4 right-4 text-black hover:text-black">
                 <Bookmark size={20} />
               </button>
 
-              {/* Job Title */}
-              <h3 className="text-xl text-black font-semibold mt-2">
-                {job.job_title}
-              </h3>
+              <div className="innerCard  rounded-lg">
+                {/* Job Title */}
+                <h3 className="text-xl text-black font-semibold mt-2">
+                  {job.job_title}
+                </h3>
 
-              {/* Rating & Reviews */}
-              <div className="flex items-center gap-1 text-gray-600 mt-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    size={16}
-                    fill={i < job.rating ? "#FACC15" : "#E5E7EB"}
-                    stroke="none"
-                  />
-                ))}
-                <span className="text-sm">({job.reviews} Reviews)</span>
-              </div>
+                {/* Rating & Reviews */}
+                <div className="flex items-center gap-1 text-gray-600 mt-2">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      size={16}
+                      fill={i < job.rating ? "#FACC15" : "#E5E7EB"}
+                      stroke="none"
+                    />
+                  ))}
+                  <span className="text-sm">({job.reviews} Reviews)</span>
+                </div>
 
-              {/* Location */}
-              <div className="flex items-center gap-1 text-gray-600 text-sm mt-2">
-                <MapPin size={16} />
-                {job.location}
-              </div>
+                {/* Location */}
+                <div className="flex items-center gap-1 text-gray-600 text-sm mt-2 ">
+                  <MapPin size={16} />
+                  {job.location}
+                </div>
 
-              {/* Job Tags */}
-              <div className="flex flex-wrap gap-2 mt-3">
-                <span className="bg-black px-3 py-1 rounded-full border text-sm font-medium">
-                  {job.employment_type}
-                </span>
-                <span className="bg-black px-3 py-1 rounded-full border text-sm font-medium">
-                  {job.seniority_level}
-                </span>
-                {job.remote && (
+                {/* Job Tags */}
+                <div className="flex flex-wrap gap-2 mt-3 ">
                   <span className="bg-black px-3 py-1 rounded-full border text-sm font-medium">
-                    Remote
+                    {job.employment_type}
                   </span>
-                )}
+                  <span className="bg-black px-3 py-1 rounded-full border text-sm font-medium">
+                    {job.seniority_level}
+                  </span>
+                  {job.remote && (
+                    <span className="bg-black px-3 py-1 rounded-full border text-sm font-medium">
+                      Remote
+                    </span>
+                  )}
+                </div>
               </div>
 
               {/* Salary & Details Button */}
-              <div className="flex items-center justify-between gap-4 mt-4 border-t pt-4">
-                <span className="text-sm font-bold truncate text-gray-800">
+              <div className="flex items-center justify-between gap-4 mt-4 border-t">
+                <span className="text-sm font-bold  text-gray-800">
                   ${job.salary}
                 </span>
                 <button
-                  onClick={() => setIsVisible(true)}
-                  className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-800"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onClickJob(job);
+                  }}
+                  className="bg-black text-white px-4 py-2 mt-2 rounded-full text-sm font-medium hover:bg-gray-800"
                 >
-                  Details
+                  Apply
                 </button>
               </div>
             </div>
@@ -123,7 +141,13 @@ const Jobs = () => {
         </div>
       </div>
 
-      {isVisible && <Modal isVisible={isVisible} onClose={onClose} />}
+      {isVisible && selectedJob && user && (
+        <Modal
+          isVisible={isVisible}
+          onClose={onClose}
+          selectedJob={selectedJob}
+        />
+      )}
     </div>
   );
 };

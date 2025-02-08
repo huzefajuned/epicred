@@ -20,7 +20,7 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
   return (
     <div className="bg-black flex flex-col justify-around  text-white w-full ">
       {/* Top section with logo and navigation */}
-      <div className="flex flex-row items-center justify-between px-16 py-6 border-b-[1px] border-gray-600">
+      <div className="flex flex-row items-center justify-between px-12 py-4 border-b-[1px] border-gray-600">
         {/* Logo */}
         <div>
           <Image
@@ -58,11 +58,15 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
         <div className="flex items-center gap-4">
           <div className="flex justify-between  items-center gap-4 cursor-pointer px-4 py-3">
             {/* auth user */}
-            {user ? <UserAvatar classname="" /> : <LoginButton />}
-
-            <Settings className="" />
-
-            <BellRing className="" />
+            {user ? (
+              <>
+                <UserAvatar classname="" />
+                <Settings className="" />
+                <BellRing className="" />{" "}
+              </>
+            ) : (
+              <LoginButton />
+            )}
           </div>
         </div>
       </div>

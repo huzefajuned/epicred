@@ -1,16 +1,19 @@
 import React from "react";
+import { JobInterface } from "../_types/types";
 
 const Modal = ({
   isVisible,
   onClose,
+  selectedJob,
 }: {
   isVisible: boolean;
   onClose: () => void;
+  selectedJob: JobInterface | null;
 }) => {
-  if (!isVisible) return null;
+  if (!isVisible || !selectedJob) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center px-4">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center px-4">
       <div className="bg-white p-6 rounded-xl shadow-2xl w-full max-w-lg relative">
         {/* Close Button */}
         <button
@@ -20,65 +23,44 @@ const Modal = ({
           &times;
         </button>
 
-        {/* Modal Header */}
-        <h2 className="text-2xl font-bold text-gray-800 mb-3 text-center">
-          Contact Us
+        {/* Job Title */}
+        <h2 className="text-2xl font-bold text-gray-900 mb-3">
+          {selectedJob.job_title}
         </h2>
-        <p className="text-sm text-gray-600 mb-4 text-center">
-          We’d love to hear from you! Please fill out the form below.
+        <p className="text-gray-600 mb-4">
+          <span className="font-semibold">Company:</span> {selectedJob.company}
         </p>
 
-        {/* Form */}
-        <form className="space-y-4">
-          <div>
-            <label className="block text-gray-700 font-medium">Full Name</label>
-            <input
-              type="text"
-              className="w-full p-3 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              placeholder="Enter your name"
-              required
-            />
-          </div>
+        {/* Location */}
+        <div className="flex items-center gap-2 text-gray-600 mb-2">
+          <span>📍</span>
+          <span>{selectedJob.location}</span>
+        </div>
 
-          <div>
-            <label className="block text-gray-700 font-medium">Email</label>
-            <input
-              type="email"
-              className="w-full p-3 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              placeholder="Enter your email"
-              required
-            />
-          </div>
+        {/* Salary */}
+        <div className="text-lg font-bold text-gray-900 mt-2 mb-4">
+          💰 ${selectedJob.salary} / year
+        </div>
 
-          <div>
-            <label className="block text-gray-700 font-medium">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              className="w-full p-3 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              placeholder="Enter your phone number"
-              required
-            />
-          </div>
+        {/* Job Tags */}
+        <div className="flex flex-wrap gap-2">
+          <span className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-medium">
+            {selectedJob.employment_type}
+          </span>
+          <span className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-medium">
+            {selectedJob.seniority_level}
+          </span>
+          {selectedJob.remote && (
+            <span className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-medium">
+              Remote
+            </span>
+          )}
+        </div>
 
-          <div>
-            <label className="block text-gray-700 font-medium">Message</label>
-            <textarea
-              className="w-full p-3 mt-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              placeholder="Write your message..."
-              rows={4}
-              required
-            ></textarea>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
-          >
-            Apply 
-          </button>
-        </form>
+        {/* Apply Button */}
+        <button className="w-full mt-6 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-semibold">
+          Apply Now
+        </button>
       </div>
     </div>
   );
