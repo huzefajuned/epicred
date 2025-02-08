@@ -1,6 +1,6 @@
 import React from "react";
-import { useAuth } from "../context/AuthProvider";
-import UserAvatar from "./ui/User-Avatar";
+import { useAuth } from "../../context/AuthProvider";
+import UserAvatar from "./User-Avatar";
 
 const Profile = () => {
   const { user } = useAuth();

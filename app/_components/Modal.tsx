@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { JobInterface } from "../_types/types";
+import toast from "react-hot-toast";
 
 const Modal = ({
   isVisible,
@@ -10,6 +11,36 @@ const Modal = ({
   onClose: () => void;
   selectedJob: JobInterface | null;
 }) => {
+  const [hasApplied, setHasApplied] = useState(false);
+
+  useEffect(() => {
+    if (selectedJob) {
+      // Check if the job has already been applied for
+      const appliedJobs = JSON.parse(
+        localStorage.getItem("appliedJobs") || "[]"
+      );
+      setHasApplied(appliedJobs.includes(selectedJob.id));
+    }
+  }, [selectedJob]);
+
+  const handleApply = () => {
+    if (!selectedJob) return;
+
+    const appliedJobs = JSON.parse(localStorage.getItem("appliedJobs") || "[]");
+
+    if (!appliedJobs.includes(selectedJob.id)) {
+      appliedJobs.push(selectedJob.id);
+      localStorage.setItem("appliedJobs", JSON.stringify(appliedJobs));
+      setHasApplied(true);
+      toast.success("Application submitted successfully!");
+      onClose()
+    } else {
+      toast.error("You have already applied for this job.");
+      onClose()
+
+    }
+  };
+
   if (!isVisible || !selectedJob) return null;
 
   return (
@@ -58,8 +89,16 @@ const Modal = ({
         </div>
 
         {/* Apply Button */}
-        <button className="w-full mt-6 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-semibold">
-          Apply Now
+        <button
+          className={`w-full mt-6 py-3 rounded-lg transition font-semibold ${
+            hasApplied
+              ? "bg-gray-500 cursor-not-allowed"
+              : "bg-blue-600 text-white hover:bg-blue-700"
+          }`}
+          onClick={handleApply}
+          disabled={hasApplied}
+        >
+          {hasApplied ? "Already Applied" : "Apply Now"}
         </button>
       </div>
     </div>

@@ -37,19 +37,21 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
 
         {/* Navigation Links */}
         <nav className="flex gap-6">
-          {navLinks.map((nav: NavInterface) => (
-            <button
-              key={nav.id}
-              onClick={() => setActiveComponent(nav.component)}
-              className={`${
-                nav.id == 1 || activeComponent == nav.component
-                  ? " border-b-white border-b-2"
-                  : ""
-              } hover:text-blue-500 font-medium p-4 border-b-2 border-black`}
-            >
-              {nav.title}
-            </button>
-          ))}
+          {navLinks
+            .filter((nav: NavInterface) => nav.id !== 6) // Exclude id 6
+            .map((nav: NavInterface) => (
+              <button
+                key={nav.id}
+                onClick={() => setActiveComponent(nav.component)}
+                className={`${
+                  nav.id == 1 || activeComponent == nav.component
+                    ? " border-b-white border-b-2"
+                    : ""
+                } hover:text-blue-500 font-medium p-4 border-b-2 border-black`}
+              >
+                {nav.title}
+              </button>
+            ))}
         </nav>
 
         {/* Location */}
@@ -76,7 +78,10 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
           </div>
         </div>
         {visibleDropdown && (
-          <UserDropdown setVisibleDropdown={setVisibleDropdown} />
+          <UserDropdown
+            setVisibleDropdown={setVisibleDropdown}
+            setActiveComponent={setActiveComponent}
+          />
         )}
       </div>
 

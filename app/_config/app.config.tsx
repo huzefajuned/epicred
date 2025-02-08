@@ -11,16 +11,18 @@ import Messages from "../_components/Messages";
 import Hiring from "../_components/Hiring";
 import Community from "../_components/Community";
 import FAQ from "../_components/FAQ";
+import AppliedJobs from "../_components/Applied-Jobs";
 
-export const navLinks:NavInterface[] = [
+export const navLinks: NavInterface[] = [
   { id: 1, title: "Find Job", component: <Jobs /> },
   { id: 2, title: "Messages", component: <Messages /> },
   { id: 3, title: "Hiring", component: <Hiring /> },
   { id: 4, title: "Community", component: <Community /> },
   { id: 5, title: "FAQ", component: <FAQ /> },
+  { id: 6, title: "AppliedJobs", component: <AppliedJobs /> },
 ] as const;
 
-export const filterList:FilterItem[] = [
+export const filterList: FilterItem[] = [
   { id: 1, icon: <Search />, title: "Role", icon2: <ChevronDown /> },
   { id: 2, icon: <MapPinCheck />, title: "Location", icon2: <ChevronDown /> },
   {

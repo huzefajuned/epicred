@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Bookmark, Star, MapPin } from "lucide-react";
 import jobs from "../Data/fake-data.json";
-import Profile from "./Profile";
+import Profile from "./ui/Profile";
 import { JobInterface } from "../_types/types";
 import Modal from "./Modal";
 import { useAuth } from "../context/AuthProvider";
@@ -141,6 +141,7 @@ const Jobs = () => {
         </div>
       </div>
 
+      {/* apply for a job : -  MODAL */}
       {isVisible && selectedJob && user && (
         <Modal
           isVisible={isVisible}
