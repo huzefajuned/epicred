@@ -3,6 +3,7 @@ import React from "react";
 import { Bookmark, MapPin } from "lucide-react";
 import { bgColors } from "@/app/_config/app.config";
 import RatingStar from "./Rating-Star";
+import Image from "next/image";
 
 const Jobcard = ({
   job,
@@ -19,11 +20,14 @@ const Jobcard = ({
       key={job.id}
       className={`flex flex-col justify-between gap-5 p-2 rounded-xl shadow-md border border-gray-200 w-full md:w-[35%] lg:w-[25%] relative`}
     >
-      <div className={`${randomBgColor} rounded-lg  p-4 h-full flex flex-col gap-1  `}>
+      <div
+        className={`${randomBgColor} rounded-lg  p-4 h-full flex flex-col gap-1  `}
+      >
         {/* Bookmark Icon */}
-        <div className="flex flex-row justify-between gap-3">
+        <div className="flex flex-row justify-between gap-3 mb-3">
           <button className="text-black hover:text-black">
-            <Bookmark size={30} />
+            <Image src={`${job.logo}`} alt="logo" height={40} width={40} />
+            {/* {job.logo} */}
           </button>
           <button className=" text-black hover:text-black bg-white rounded-full p-2">
             <Bookmark size={25} />
@@ -45,7 +49,7 @@ const Jobcard = ({
         </div>
 
         {/* Job Tags */}
-        <div className="flex flex-wrap gap-2 mt-3 ">
+        <div className="flex flex-wrap gap-2 mt-3 justify-start ">
           <span className="bg-black px-3 py-1 rounded-full border text-sm font-medium">
             {job.employment_type}
           </span>
@@ -62,7 +66,7 @@ const Jobcard = ({
 
       {/* Salary & Details Button */}
       <div className="flex items-center justify-between gap-4 mt-4 border-t">
-        <span className="text-sm font-bold text-gray-800">${job.salary}</span>
+        <span className="text-sm font-bold text-gray-800">{job.salary}</span>
         <button
           onClick={(e) => {
             e.stopPropagation();

@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { Settings, BellRing, MapPinHouse } from "lucide-react";
-import logo from "../assets/logo.svg";
 import { filterList, navLinks } from "../_config/app.config";
 import SalaryRange from "./Salaray-Range";
 import { FilterItem, NavInterface } from "../_types/types";
@@ -32,7 +31,7 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
         "
         >
           <Image
-            src={logo}
+            src="/assets/logo.svg"
             alt="logo"
             width={120}
             height={40}

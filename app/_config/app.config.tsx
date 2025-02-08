@@ -42,13 +42,9 @@ export const filters: FilterOptions = {
 
 //  array of background colors
 export const bgColors = [
-  "bg-yellow-300",
-  "bg-yellow-400",
   "bg-purple-400",
   "bg-lime-300",
   "bg-cyan-400",
-  "bg-orange-300",
-  "bg-orange-400",
   "bg-teal-300",
   "bg-purple-300",
   "bg-emerald-400",

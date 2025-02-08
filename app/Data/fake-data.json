@@ -2,9 +2,9 @@
   {
     "id": 1,
     "company": "Google",
-    "logo": "google-logo.png",
+    "logo": "/assets/google.svg",
     "job_title": "Senior Product Manager",
-    "rating": 3.5,
+    "rating": 4.5,
     "reviews": 42,
     "location": "California, CA",
     "employment_type": "Full Time",
@@ -15,9 +15,9 @@
   {
     "id": 2,
     "company": "Microsoft",
-    "logo": "microsoft-logo.png",
+    "logo": "./assets/mi.svg",
     "job_title": "Software Engineer",
-    "rating": 4.0,
+    "rating": 4.7,
     "reviews": 58,
     "location": "Redmond, WA",
     "employment_type": "Full Time",
@@ -28,9 +28,9 @@
   {
     "id": 3,
     "company": "Amazon",
-    "logo": "amazon-logo.png",
+    "logo": "/assets/amazon.svg",
     "job_title": "Data Scientist",
-    "rating": 3.5,
+    "rating": 4.3,
     "reviews": 36,
     "location": "Seattle, WA",
     "employment_type": "Contract",
@@ -41,7 +41,7 @@
   {
     "id": 4,
     "company": "Facebook",
-    "logo": "facebook-logo.png",
+    "logo": "/assets/facebook.svg",
     "job_title": "UX Designer",
     "rating": 4.6,
     "reviews": 50,
@@ -54,7 +54,7 @@
   {
     "id": 5,
     "company": "Tesla",
-    "logo": "tesla-logo.png",
+    "logo": "./assets/tesla.svg",
     "job_title": "Mechanical Engineer",
     "rating": 4.2,
     "reviews": 30,
@@ -67,7 +67,7 @@
   {
     "id": 6,
     "company": "Apple",
-    "logo": "apple-logo.png",
+    "logo": "./assets/apple.svg",
     "job_title": "iOS Developer",
     "rating": 4.8,
     "reviews": 60,
@@ -80,7 +80,7 @@
   {
     "id": 7,
     "company": "Netflix",
-    "logo": "netflix-logo.png",
+    "logo": "/assets/netflix.svg",
     "job_title": "Backend Engineer",
     "rating": 4.5,
     "reviews": 48,
@@ -93,7 +93,7 @@
   {
     "id": 8,
     "company": "Adobe",
-    "logo": "adobe-logo.png",
+    "logo": "/assets/google.svg",
     "job_title": "Graphic Designer",
     "rating": 4.4,
     "reviews": 55,
@@ -106,7 +106,7 @@
   {
     "id": 9,
     "company": "Intel",
-    "logo": "intel-logo.png",
+    "logo": "/assets/intel.svg",
     "job_title": "Hardware Engineer",
     "rating": 4.3,
     "reviews": 45,
@@ -119,7 +119,7 @@
   {
     "id": 10,
     "company": "IBM",
-    "logo": "ibm-logo.png",
+    "logo": "/assets/google.svg",
     "job_title": "Cloud Engineer",
     "rating": 4.6,
     "reviews": 52,
@@ -132,7 +132,7 @@
   {
     "id": 11,
     "company": "Salesforce",
-    "logo": "salesforce-logo.png",
+    "logo": "/assets/salesforce.svg",
     "job_title": "CRM Specialist",
     "rating": 4.4,
     "reviews": 38,
@@ -145,7 +145,7 @@
   {
     "id": 12,
     "company": "Oracle",
-    "logo": "oracle-logo.png",
+    "logo": "/assets/oracle.svg",
     "job_title": "Database Administrator",
     "rating": 4.1,
     "reviews": 28,
@@ -158,7 +158,7 @@
   {
     "id": 13,
     "company": "Cisco",
-    "logo": "cisco-logo.png",
+    "logo": "/assets/google.svg",
     "job_title": "Network Engineer",
     "rating": 4.3,
     "reviews": 33,
@@ -171,7 +171,7 @@
   {
     "id": 14,
     "company": "Spotify",
-    "logo": "spotify-logo.png",
+    "logo": "/assets/spotify.svg",
     "job_title": "Audio Engineer",
     "rating": 4.7,
     "reviews": 47,
@@ -184,7 +184,7 @@
   {
     "id": 15,
     "company": "Google",
-    "logo": "google-logo.png",
+    "logo": "/assets/google.svg",
     "job_title": "Software Engineer",
     "rating": 4.8,
     "reviews": 120,
@@ -197,7 +197,7 @@
   {
     "id": 16,
     "company": "Amazon",
-    "logo": "amazon-logo.png",
+    "logo": "/assets/amazon.svg",
     "job_title": "Cloud Support Engineer",
     "rating": 4.5,
     "reviews": 85,
@@ -210,7 +210,7 @@
   {
     "id": 17,
     "company": "Tesla",
-    "logo": "tesla-logo.png",
+    "logo": "/assets/google.svg",
     "job_title": "Embedded Systems Engineer",
     "rating": 4.6,
     "reviews": 60,
@@ -223,7 +223,7 @@
   {
     "id": 18,
     "company": "Netflix",
-    "logo": "netflix-logo.png",
+    "logo": "/assets/netflix.svg",
     "job_title": "Machine Learning Engineer",
     "rating": 4.7,
     "reviews": 77,
@@ -236,7 +236,7 @@
   {
     "id": 19,
     "company": "Meta",
-    "logo": "meta-logo.png",
+    "logo": "/assets/google.svg",
     "job_title": "Front-End Developer",
     "rating": 4.5,
     "reviews": 95,
@@ -249,7 +249,7 @@
   {
     "id": 20,
     "company": "Microsoft",
-    "logo": "microsoft-logo.png",
+    "logo": "/assets/google.svg",
     "job_title": "DevOps Engineer",
     "rating": 4.6,
     "reviews": 110,
@@ -262,7 +262,7 @@
   {
     "id": 21,
     "company": "Apple",
-    "logo": "apple-logo.png",
+    "logo": "./assets/apple.svg",
     "job_title": "iOS Developer",
     "rating": 4.7,
     "reviews": 130,
@@ -275,7 +275,7 @@
   {
     "id": 22,
     "company": "Twitter",
-    "logo": "twitter-logo.png",
+    "logo": "/assets/google.svg",
     "job_title": "Backend Engineer",
     "rating": 4.5,
     "reviews": 70,
@@ -288,7 +288,7 @@
   {
     "id": 23,
     "company": "Adobe",
-    "logo": "adobe-logo.png",
+    "logo": "/assets/google.svg",
     "job_title": "UI/UX Designer",
     "rating": 4.6,
     "reviews": 95,
@@ -301,7 +301,7 @@
   {
     "id": 24,
     "company": "IBM",
-    "logo": "ibm-logo.png",
+    "logo": "/assets/google.svg",
     "job_title": "Cybersecurity Analyst",
     "rating": 4.4,
     "reviews": 80,
@@ -314,7 +314,7 @@
   {
     "id": 25,
     "company": "Salesforce",
-    "logo": "salesforce-logo.png",
+    "logo": "/assets/salesforce.svg",
     "job_title": "Cloud Architect",
     "rating": 4.7,
     "reviews": 105,
@@ -327,7 +327,7 @@
   {
     "id": 26,
     "company": "Oracle",
-    "logo": "oracle-logo.png",
+    "logo": "/assets/oracle.svg",
     "job_title": "Database Administrator",
     "rating": 4.3,
     "reviews": 65,
@@ -340,7 +340,7 @@
   {
     "id": 27,
     "company": "LinkedIn",
-    "logo": "linkedin-logo.png",
+    "logo": "/assets/linkedin.svg",
     "job_title": "Data Scientist",
     "rating": 4.8,
     "reviews": 115,
@@ -353,7 +353,7 @@
   {
     "id": 28,
     "company": "Uber",
-    "logo": "uber-logo.png",
+    "logo": "/assets/google.svg",
     "job_title": "AI Research Engineer",
     "rating": 4.5,
     "reviews": 90,
@@ -366,7 +366,7 @@
   {
     "id": 29,
     "company": "Dropbox",
-    "logo": "dropbox-logo.png",
+    "logo": "/assets/google.svg",
     "job_title": "Site Reliability Engineer",
     "rating": 4.6,
     "reviews": 78,
@@ -379,7 +379,7 @@
   {
     "id": 30,
     "company": "Zoom",
-    "logo": "zoom-logo.png",
+    "logo": "/assets/google.svg",
     "job_title": "VoIP Engineer",
     "rating": 4.4,
     "reviews": 55,
