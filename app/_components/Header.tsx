@@ -10,6 +10,7 @@ import LoginButton from "./ui/Login-Button";
 import { useAuth } from "../context/AuthProvider";
 import UserAvatar from "./ui/User-Avatar";
 import UserDropdown from "./ui/User-Dropdown";
+import Jobs from "./Jobs";
 
 interface HeaderProps {
   activeComponent: JSX.Element;
@@ -25,7 +26,11 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
       {/* Top section with logo and navigation */}
       <div className="flex flex-row items-center justify-between px-12 py-4 border-b-[1px] border-gray-600">
         {/* Logo */}
-        <div>
+        <div
+          onClick={() => setActiveComponent(<Jobs />)}
+          className="p-1
+        "
+        >
           <Image
             src={logo}
             alt="logo"
@@ -70,7 +75,7 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
                   className=""
                   onClick={() => setVisibleDropdown(true)}
                 />
-                <BellRing className="" />{" "}
+                <BellRing className="" />
               </>
             ) : (
               <LoginButton />
