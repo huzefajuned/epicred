@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Bookmark, Star, MapPin } from "lucide-react";
 import jobs from "../Data/fake-data.json";
 import Profile from "./Profile";
 import { JobInterface } from "../_types/types";
+import Modal from "./Modal";
 
 type FilterOptions = {
   [key: string]: string[];
@@ -13,6 +14,10 @@ const filters: FilterOptions = {
   "Employment Type": ["Full Day", "Flexible Schedule", "Distant Work"],
 };
 const Jobs = () => {
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const onClose = () => {
+    setIsVisible(false);
+  };
   return (
     <div className="flex flex-row gap-20 w-full overflow-scroll h-[70vh]  p-6">
       {/*  */}
@@ -106,7 +111,10 @@ const Jobs = () => {
                 <span className="text-sm font-bold truncate text-gray-800">
                   ${job.salary}
                 </span>
-                <button className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-800">
+                <button
+                  onClick={() => setIsVisible(true)}
+                  className="bg-black text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-800"
+                >
                   Details
                 </button>
               </div>
@@ -114,6 +122,8 @@ const Jobs = () => {
           ))}
         </div>
       </div>
+
+      {isVisible && <Modal isVisible={isVisible} onClose={onClose} />}
     </div>
   );
 };

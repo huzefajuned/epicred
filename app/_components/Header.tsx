@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import {  Settings, BellRing } from "lucide-react";
+import { Settings, BellRing } from "lucide-react";
 import logo from "../assets/logo.svg";
 import { filterList, navLinks } from "../_config/app.config";
 import SalaryRange from "./Salaray-Range";
@@ -58,7 +58,7 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
         <div className="flex items-center gap-4">
           <div className="flex justify-between  items-center gap-4 cursor-pointer px-4 py-3">
             {/* auth user */}
-            {user ? <UserAvatar  classname=""/> : <LoginButton />}
+            {user ? <UserAvatar classname="" /> : <LoginButton />}
 
             <Settings className="" />
 
