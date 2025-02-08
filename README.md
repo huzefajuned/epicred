@@ -15,6 +15,7 @@ This is a **Job Application Dashboard** built using **Next.js, TypeScript, and T
 
 - **Next.js (App Router)** - Server-side rendering (SSR) and static generation (SSG)
 - **React.js** - Component-based UI
+- **Firebase** - User Authentication / Authorization
 - **TypeScript** - Ensures type safety
 - **Tailwind CSS** - For a clean and responsive UI
 - **State Management** - Context API 
@@ -26,10 +27,10 @@ Clone the repository and install dependencies:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/epicred-job-dashboard.git
+git clone https://github.com/your-username/epicred.git
 
 # Navigate to the project directory
-cd epicred-job-dashboard
+cd epicred
 
 # Install dependencies
 npm install  # or yarn install
