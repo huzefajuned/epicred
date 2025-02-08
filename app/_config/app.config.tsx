@@ -5,7 +5,7 @@ import {
   BriefcaseBusiness,
   Banknote,
 } from "lucide-react";
-import { FilterItem, NavInterface } from "../_types/types";
+import { FilterItem, FilterOptions, NavInterface } from "../_types/types";
 import Jobs from "../_components/Jobs";
 import Messages from "../_components/Messages";
 import Hiring from "../_components/Hiring";
@@ -33,3 +33,39 @@ export const filterList: FilterItem[] = [
   },
   { id: 4, icon: <Banknote />, title: "Salary", icon2: <ChevronDown /> },
 ] as const;
+
+// filter
+export const filters: FilterOptions = {
+  "Working Schedule": ["Full Time", "Internship", "Freelance", "Contractual"],
+  "Employment Type": ["Full Day", "Flexible Schedule", "Distant Work"],
+};
+
+//  array of background colors
+export const bgColors = [
+  "bg-yellow-300",
+  "bg-yellow-400",
+  "bg-purple-400",
+  "bg-lime-300",
+  "bg-cyan-400",
+  "bg-orange-300",
+  "bg-orange-400",
+  "bg-teal-300",
+  "bg-purple-300",
+  "bg-emerald-400",
+  "bg-lime-400",
+  "bg-red-300",
+  "bg-red-400",
+  "bg-blue-300",
+  "bg-blue-400",
+  "bg-green-300",
+  "bg-green-400",
+  "bg-rose-300",
+  "bg-rose-400",
+  "bg-emerald-300",
+  "bg-pink-300",
+  "bg-pink-400",
+  "bg-cyan-300",
+  "bg-teal-400",
+  "bg-indigo-300",
+  "bg-indigo-400",
+];

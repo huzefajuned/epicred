@@ -1,9 +1,9 @@
-import  { JSX } from "react";
+import { JSX } from "react";
 
 export interface NavInterface {
   id: number;
   title: string;
-  component:JSX.Element;
+  component: JSX.Element;
 }
 
 export interface FilterItem {
@@ -27,3 +27,8 @@ export interface JobInterface {
   remote: boolean;
   salary: string;
 }
+
+// filters
+export type FilterOptions = {
+  [key: string]: string[];
+};
