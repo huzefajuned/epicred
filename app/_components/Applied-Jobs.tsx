@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { JobInterface } from "../_types/types";
-import jobList from "../Data/fake-data.json"; // Replace with actual job list or API call
+import jobList from "../Data/fake-data.json"; // Ensure this is correctly imported
 
 const AppliedJobs = () => {
   const [appliedJobs, setAppliedJobs] = useState<JobInterface[]>([]);
 
   useEffect(() => {
-    // Retrieve applied job IDs
-    const appliedJobIds: string[] = JSON.parse(
+    // Retrieve applied job IDs and convert them to numbers
+    const appliedJobIds: number[] = JSON.parse(
       localStorage.getItem("appliedJobs") || "[]"
-    );
+    ).map(Number);
 
     // Fetch the full job details from jobList (or API)
     const filteredJobs = jobList.filter((job) =>
-      appliedJobIds.includes(`${job.id}`)
+      appliedJobIds.includes(job.id)
     );
 
     setAppliedJobs(filteredJobs);
