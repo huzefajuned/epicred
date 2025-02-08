@@ -15,7 +15,7 @@
   {
     "id": 2,
     "company": "Microsoft",
-    "logo": "./assets/mi.svg",
+    "logo": "./assets/microsoft.svg",
     "job_title": "Software Engineer",
     "rating": 4.7,
     "reviews": 58,
