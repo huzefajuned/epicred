@@ -54,7 +54,7 @@
   {
     "id": 5,
     "company": "Tesla",
-    "logo": "./assets/tesla.svg",
+    "logo": "./assets/netflix.svg",
     "job_title": "Mechanical Engineer",
     "rating": 4.2,
     "reviews": 30,

@@ -18,24 +18,23 @@ const Jobcard = ({
   return (
     <div
       key={job.id}
-      className={`flex flex-col justify-between gap-5 p-2 rounded-xl shadow-md border border-gray-200 w-full md:w-[35%] lg:w-[25%] relative`}
+      className="flex flex-col justify-between gap-5 p-2 rounded-xl shadow-md border h-[10%] border-gray-200 w-full sm:w-[90%] md:w-[48%] lg:w-[30%] xl:w-[26%] relative"
     >
       <div
-        className={`${randomBgColor} rounded-lg  p-4 h-full flex flex-col gap-1  `}
+        className={`${randomBgColor} rounded-lg p-4 h-full flex flex-col justify-between gap-1`}
       >
         {/* Bookmark Icon */}
-        <div className="flex flex-row justify-between gap-3 mb-3">
+        <div className="flex flex-row justify-between items-center mb-3">
           <button className="text-black hover:text-black">
             <Image src={`${job.logo}`} alt="logo" height={40} width={40} />
-            {/* {job.logo} */}
           </button>
-          <button className=" text-black hover:text-black bg-white rounded-full p-2">
+          <button className="text-black hover:text-black bg-white rounded-full p-2">
             <Bookmark size={25} />
           </button>
         </div>
 
         {/* Job Title */}
-        <h3 className="text-xl text-black font-semibold mt-2">
+        <h3 className="text-lg md:text-xl text-black font-semibold">
           {job.job_title}
         </h3>
 
@@ -43,21 +42,21 @@ const Jobcard = ({
         <RatingStar job={job} />
 
         {/* Location */}
-        <div className="flex items-center gap-1 text-gray-600 text-sm mt-2 ">
+        <div className="flex items-center gap-1 text-gray-600 text-sm mt-2">
           <MapPin size={16} />
           {job.location}
         </div>
 
         {/* Job Tags */}
-        <div className="flex flex-wrap gap-2 mt-3 justify-start ">
-          <span className="bg-black px-3 py-1 rounded-full border text-sm font-medium">
+        <div className="flex flex-wrap gap-2 mt-3">
+          <span className="bg-black text-white px-3 py-1 rounded-full text-xs font-medium">
             {job.employment_type}
           </span>
-          <span className="bg-black px-3 py-1 rounded-full border text-sm font-medium">
+          <span className="bg-black text-white px-3 py-1 rounded-full text-xs font-medium">
             {job.seniority_level}
           </span>
           {job.remote && (
-            <span className="bg-black px-3 py-1 rounded-full border text-sm font-medium">
+            <span className="bg-black text-white px-3 py-1 rounded-full text-xs font-medium">
               Remote
             </span>
           )}
@@ -65,14 +64,14 @@ const Jobcard = ({
       </div>
 
       {/* Salary & Details Button */}
-      <div className="flex items-center justify-between gap-4 mt-4 border-t">
+      <div className="flex items-center justify-between">
         <span className="text-sm font-bold text-gray-800">{job.salary}</span>
         <button
           onClick={(e) => {
             e.stopPropagation();
             onClickJob(job);
           }}
-          className="bg-black text-white px-5 py-2 mt-2 rounded-full text-sm font-medium hover:bg-red-400"
+          className="bg-black text-white px-4 py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-red-400 transition-all"
         >
           Apply
         </button>

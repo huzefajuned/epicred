@@ -33,10 +33,10 @@ const Jobs = () => {
 
       <div className="flex flex-col  h-full  w-[70%]  gap-12 ">
         <h1 className="text-4xl text-black font-bold">
-          Recommended Jobs{" "}
-          <span className="text-2xl border-2 font-medium rounded-full px-4 py-1">
+          Recommended Jobs
+          <span className="text-2xl border-2 font-medium rounded-full px-4 py-1 ml-3">
             {jobs.length}
-          </span>{" "}
+          </span>
         </h1>
 
         <div className="flex flex-wrap justify-between gap-16">
