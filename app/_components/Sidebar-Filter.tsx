@@ -1,7 +1,8 @@
 import React from "react";
 import Profile from "./ui/Profile";
 import { filters } from "../_config/app.config";
-import { selectedFiltersInterface } from "../_hooks/useJobFilter";
+import { selectedFiltersInterface } from "../_types/types";
+
 
 const SidebarFilter = ({
   selectedFilters,

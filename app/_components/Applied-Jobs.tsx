@@ -37,8 +37,8 @@ const AppliedJobs = () => {
               key={job.id}
               className="bg-white p-4 shadow-md rounded-lg border border-gray-200"
             >
-                          <Image src={`${job.logo}`} alt="logo" height={40} width={40} />
-              
+              <Image src={`${job.logo}`} alt="logo" height={40} width={40} />
+
               <h2 className="text-xl font-semibold text-gray-900">
                 {job.job_title}
               </h2>

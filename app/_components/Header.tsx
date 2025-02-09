@@ -1,36 +1,34 @@
 "use client";
 import Image from "next/image";
-import { Settings, BellRing, MapPinHouse } from "lucide-react";
+import { Settings, BellRing, MapPinHouse, Menu } from "lucide-react";
 import { filterList, navLinks } from "../_config/app.config";
 import SalaryRange from "./Salaray-Range";
-import { FilterItem, NavInterface } from "../_types/types";
-import { Dispatch, JSX, SetStateAction, useState } from "react";
+import { FilterItem, HeaderProps, NavInterface } from "../_types/types";
+import { useState } from "react";
 import LoginButton from "./ui/Login-Button";
 import { useAuth } from "../context/AuthProvider";
 import UserAvatar from "./ui/User-Avatar";
 import UserDropdown from "./ui/User-Dropdown";
 import Jobs from "./Jobs";
 
-interface HeaderProps {
-  activeComponent: JSX.Element;
-  setActiveComponent: Dispatch<SetStateAction<JSX.Element>>;
-}
-
 const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
   const { user } = useAuth();
   const [visibleDropdown, setVisibleDropdown] = useState<boolean>(false);
 
   return (
-    <div className="bg-black flex flex-col justify-around  text-white w-full ">
+    <div className="bg-black flex flex-col justify-between sm:justify-between  text-white w-full ">
       {/* Top section with logo and navigation */}
-      <div className="flex flex-row items-center justify-between px-12 py-4 border-b-[1px] border-gray-600">
+      <div className="flex flex-row items-center justify-between sm:justify-between   px-2 py-1 sm:px-12 sm:py-4 border-b-[1px] border-gray-600">
         {/* Logo */}
+
         <div
-          onClick={() => setActiveComponent(<Jobs />)}
-          className="p-1
+          className="p-1 flex flex-row items-center  gap-4 sm:gap-0 
         "
         >
+          <Menu className="flex   sm:hidden " size={32} />
+
           <Image
+            onClick={() => setActiveComponent(<Jobs />)}
             src="/assets/logo.svg"
             alt="logo"
             width={120}
@@ -40,7 +38,7 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
         </div>
 
         {/* Navigation Links */}
-        <nav className="flex gap-6">
+        <nav className="hidden sm:flex  gap-2 sm:gap-6">
           {navLinks
             .filter((nav: NavInterface) => nav.id !== 6) // Exclude id 6
             .map((nav: NavInterface) => (
@@ -59,7 +57,7 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
         </nav>
 
         {/* Location */}
-        <div className="flex items-center gap-4">
+        <div className="hidden sm:flex items-center gap-4">
           <MapPinHouse /> <span className=""> New York, NY</span>
         </div>
 
@@ -90,15 +88,18 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
       </div>
 
       {/* Bottom section with filters */}
-      <div className="flex  flex-row gap-7 justify-between px-16 py-6  w-full">
+      <div className="flex   flex-row  items-center   overflow-x-scroll  gap-2 sm:gap-7 justify-between px-2 py-2 sm:px-16 sm:py-6   w-full">
         {filterList.map((list: FilterItem) => (
           <div
             key={list.id}
-            className="flex flex-row justify-start  items-center gap-3  border-gray-600 border-r-[1px] w-48   py-5   cursor-pointer"
+            className="flex flex-row items-center gap-1 sm:gap-3 px-2 py-3 sm:py-5 w-36 sm:w-48 md:w-52 cursor-pointer 
+            border-[1px]  rounded-xl sm:rounded-none  border-gray-600 sm:border-r-[1px] sm:border-t-0 sm:border-l-0 sm:border-b-0"
           >
-            <span className="text-2xl ml-2">{list.icon}</span>
-            <span className="text-xl">{list.title}</span>
-            <span className="ml-2">{list.icon2}</span>
+            <span className=" text-sm sm:text-2xl ml-1 sm:ml-2">
+              {list.icon}
+            </span>
+            <span className=" text-sm sm:text-xl truncate">{list.title}</span>
+            <span className="">{list.icon2}</span>
           </div>
         ))}
 

@@ -1,10 +1,7 @@
 "use client";
 import { useState, useMemo } from "react";
 import jobsData from "../_data/fake-data.json";
-
-export interface selectedFiltersInterface {
-  [key: string]: string | null;
-}
+import { selectedFiltersInterface } from "../_types/types";
 
 const useJobFilter = () => {
   const [selectedFilters, setSelectedFilters] =
@@ -31,7 +28,6 @@ const useJobFilter = () => {
     }));
   };
 
-  console.log("selectedFilters :", selectedFilters);
   return { filteredJobs, updateFilter, selectedFilters };
 };
 

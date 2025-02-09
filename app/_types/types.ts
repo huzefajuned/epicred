@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import { Dispatch, JSX, SetStateAction } from "react";
 
 export interface NavInterface {
   id: number;
@@ -13,6 +13,11 @@ export interface FilterItem {
   icon2: JSX.Element;
 }
 
+// header props
+export interface HeaderProps {
+  activeComponent: JSX.Element;
+  setActiveComponent: Dispatch<SetStateAction<JSX.Element>>;
+}
 //  for JOBS
 export interface JobInterface {
   id: number;
@@ -32,3 +37,8 @@ export interface JobInterface {
 export type FilterOptions = {
   [key: string]: string[];
 };
+
+
+export interface selectedFiltersInterface {
+  [key: string]: string | null;
+}
