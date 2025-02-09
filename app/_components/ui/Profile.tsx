@@ -8,7 +8,7 @@ const Profile = () => {
   return (
     <>
       {user && (
-        <div className="bg-black  hidden sm:flex max-h-[288px] text-white rounded-2xl w-full p-5  shadow-lg  flex-col gap-3 items-center ">
+        <div className="bg-black  hidden  md:hidden lg:flex max-h-[288px] text-white rounded-2xl w-full p-5  shadow-lg  flex-col gap-3 items-center ">
           <UserAvatar classname="!w-20 !h-20" />
           <h2 className="text-2xl font-semibold  text-center">
             Update your data!

@@ -22,10 +22,10 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
         {/* Logo */}
 
         <div
-          className="p-1 flex flex-row items-center  gap-4 sm:gap-0 
+          className="p-1 flex flex-row items-center  gap-4 sm:gap-0  md:gap-10
         "
         >
-          <Menu className="flex   sm:hidden " size={32} />
+          <Menu className="flex    sm:flex md:flex  lg:hidden" size={32} />
 
           <Image
             onClick={() => setActiveComponent(<Jobs />)}
@@ -38,7 +38,7 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
         </div>
 
         {/* Navigation Links */}
-        <nav className="hidden sm:flex  gap-2 sm:gap-6">
+        <nav className="hidden sm:flex md:hidden lg:flex  gap-2 sm:gap-6">
           {navLinks
             .filter((nav: NavInterface) => nav.id !== 6) // Exclude id 6
             .map((nav: NavInterface) => (

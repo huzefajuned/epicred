@@ -40,7 +40,7 @@ const Jobs = () => {
           </span>
         </h1>
 
-        <div className="flex flex-wrap   justify-evenly  p-4 sm:p-0 gap-4 sm:gap-16  w-full">
+        <div className="flex flex-wrap   justify-evenly  p-4 sm:p-0 gap-4 sm:gap-16 md:gap-2  w-full">
           {filteredJobs.map((job) => (
             <Jobcard key={job.id} job={job} onClickJob={onClickJob} />
           ))}

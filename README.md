@@ -12,8 +12,9 @@ This is a **Job Application Dashboard** built using **Next.js, TypeScript, and T
 ## 📸 Screenshots
 
 Here are some previews of the application:
-
+![Screenshot 1](screenshots/aa.png)
 ![Screenshot 1](screenshots/e.png)
+![Screenshot 3](screenshots/bb.png)
 ![Screenshot 3](screenshots/g.png)
 ![Screenshot 4](screenshots/h.png)
 ![Screenshot 5](screenshots/a.png)
