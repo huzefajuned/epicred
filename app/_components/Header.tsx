@@ -10,13 +10,20 @@ import { useAuth } from "../context/AuthProvider";
 import UserAvatar from "./ui/User-Avatar";
 import UserDropdown from "./ui/User-Dropdown";
 import Jobs from "./Jobs";
+import Sidebar from "./Sidebar";
 
 const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
   const { user } = useAuth();
   const [visibleDropdown, setVisibleDropdown] = useState<boolean>(false);
+  const [visibleSidebar, setVisibleSidebar] = useState<boolean>(false);
+
+  // Toggle sidebar
+  const toggleSidebar = () => {
+    setVisibleSidebar((prev: boolean) => !prev);
+  };
 
   return (
-    <div className="bg-black flex flex-col justify-between sm:justify-between  text-white w-full ">
+    <div className="relative bg-black flex flex-col justify-between sm:justify-between  text-white w-full">
       {/* Top section with logo and navigation */}
       <div className="flex flex-row items-center justify-between sm:justify-between   px-2 py-1 sm:px-12 sm:py-4 border-b-[1px] border-gray-600">
         {/* Logo */}
@@ -25,7 +32,11 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
           className="p-1 flex flex-row items-center  gap-4 sm:gap-0  md:gap-10
         "
         >
-          <Menu className="flex    sm:flex md:flex  lg:hidden" size={32} />
+          <Menu
+            onClick={toggleSidebar}
+            className="flex  cursor-pointer  sm:flex md:flex  lg:hidden"
+            size={32}
+          />
 
           <Image
             onClick={() => setActiveComponent(<Jobs />)}
@@ -106,6 +117,9 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
         {/* salary range */}
         <SalaryRange />
       </div>
+
+      {/* sidebar */}
+      {visibleSidebar && <Sidebar toggleSidebar={toggleSidebar} />}
     </div>
   );
 };

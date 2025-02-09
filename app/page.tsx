@@ -12,7 +12,7 @@ export default function Home() {
   if (loading) return <HomeSkeleton />;
 
   return (
-    <div className="h-screen w-screen bg-white overflow-hidden">
+    <div className="h-screen w-screen bg-white overflow-hidden relative">
       <Header
         activeComponent={activeComponent}
         setActiveComponent={setActiveComponent}
