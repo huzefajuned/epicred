@@ -18,7 +18,7 @@ const Jobcard = ({
   return (
     <div
       key={job.id}
-      className="flex flex-col  justify-between gap-2 p-3 sm:gap-5 sm:p-2 rounded-xl shadow-md border  border-gray-200 w-full  sm:w-[80%] md:w-[48%] lg:w-[30%] xl:w-[26%] relative"
+      className="flex flex-col  justify-between gap-2 p-3 sm:gap-5 sm:p-2 rounded-xl shadow-md border  border-gray-200 w-full  sm:w-[80%] md:w-[42%] lg:w-[25%] xl:w-[26%] relative"
     >
       <div
         className={`${randomBgColor} rounded-lg  p-3 sm:p-4 min-h-[320px] sm:h-[300px] flex flex-col justify-between gap-2 sm:gap-1`}

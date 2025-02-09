@@ -32,7 +32,7 @@ const Jobs = () => {
         updateFilter={updateFilter}
       />
 
-      <div className="flex flex-col h-full w-full sm:w-[70%] gap-3 sm:gap-12 z-0 ">
+      <div className="flex flex-col h-full w-full sm:w-[70%] md:w-[75%] xl:w-[90%] gap-3 sm:gap-12 z-0 ">
         <h1 className=" text-2xl sm:text-4xl text-black font-bold text-center sm:text-start">
           Recommended Jobs
           <span className="text-2xl border-2 font-medium rounded-full px-4 py-1 ml-3">
