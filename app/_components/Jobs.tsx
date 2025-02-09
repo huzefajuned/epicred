@@ -25,22 +25,22 @@ const Jobs = () => {
   };
 
   return (
-    <div className="flex flex-row gap-20 w-full overflow-scroll h-[70vh] bg-white p-6">
+    <div className="flex flex-col sm:flex-row gap-2 sm:gap-20 w-full overflow-scroll h-[80vh] sm:h-[70vh] bg-white p-0 sm:p-6 z-0 ">
       {/* Sidebar Filter */}
       <SidebarFilter
         selectedFilters={selectedFilters}
         updateFilter={updateFilter}
       />
 
-      <div className="flex flex-col h-full w-[70%] gap-12">
-        <h1 className="text-4xl text-black font-bold">
+      <div className="flex flex-col h-full w-full sm:w-[70%] gap-3 sm:gap-12 z-0 ">
+        <h1 className=" text-2xl sm:text-4xl text-black font-bold text-center sm:text-start">
           Recommended Jobs
           <span className="text-2xl border-2 font-medium rounded-full px-4 py-1 ml-3">
             {filteredJobs.length}
           </span>
         </h1>
 
-        <div className="flex flex-wrap   justify-evenly gap-16">
+        <div className="flex flex-wrap   justify-evenly  p-4 sm:p-0 gap-4 sm:gap-16  w-full">
           {filteredJobs.map((job) => (
             <Jobcard key={job.id} job={job} onClickJob={onClickJob} />
           ))}

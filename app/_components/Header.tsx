@@ -88,7 +88,7 @@ const Header = ({ activeComponent, setActiveComponent }: HeaderProps) => {
       </div>
 
       {/* Bottom section with filters */}
-      <div className="flex   flex-row  items-center   overflow-x-scroll  gap-2 sm:gap-7 justify-between px-2 py-2 sm:px-16 sm:py-6   w-full">
+      <div className="flex   flex-row  items-center   overflow-x-scroll  gap-2 sm:gap-7 justify-between px-4 py-2 sm:px-16 sm:py-6   w-[96vw] sm:w-full m-auto">
         {filterList.map((list: FilterItem) => (
           <div
             key={list.id}

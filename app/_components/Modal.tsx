@@ -33,18 +33,17 @@ const Modal = ({
       localStorage.setItem("appliedJobs", JSON.stringify(appliedJobs));
       setHasApplied(true);
       toast.success("Application submitted successfully!");
-      onClose()
+      onClose();
     } else {
       toast.error("You have already applied for this job.");
-      onClose()
-
+      onClose();
     }
   };
 
   if (!isVisible || !selectedJob) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center px-4">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center px-4 z-50">
       <div className="bg-white p-6 rounded-xl shadow-2xl w-full max-w-lg relative">
         {/* Close Button */}
         <button
