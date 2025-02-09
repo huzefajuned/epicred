@@ -14,7 +14,7 @@ const UserDropdown = ({
   const { logout } = useAuth();
   return (
     <div
-      className="fixed inset-1 bg-transparent bg-opacity-15  flex justify-center items-center px-4"
+      className="fixed inset-1 z-50 bg-transparent bg-opacity-15  flex justify-center items-center px-4"
       onClick={() => setVisibleDropdown(false)}
     >
       <div

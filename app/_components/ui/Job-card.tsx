@@ -18,10 +18,10 @@ const Jobcard = ({
   return (
     <div
       key={job.id}
-      className="flex flex-col justify-between gap-5 p-2 rounded-xl shadow-md border h-[10%] border-gray-200 w-full sm:w-[90%] md:w-[48%] lg:w-[30%] xl:w-[26%] relative"
+      className="flex flex-col  justify-between gap-5 p-2 rounded-xl shadow-md border  border-gray-200 w-full sm:w-[90%] md:w-[48%] lg:w-[30%] xl:w-[26%] relative"
     >
       <div
-        className={`${randomBgColor} rounded-lg p-4 h-full flex flex-col justify-between gap-1`}
+        className={`${randomBgColor} rounded-lg p-4 h-[300px] flex flex-col justify-between gap-1`}
       >
         {/* Bookmark Icon */}
         <div className="flex flex-row justify-between items-center mb-3">

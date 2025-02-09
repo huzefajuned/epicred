@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { JobInterface } from "../_types/types";
-import jobList from "../Data/fake-data.json"; // Ensure this is correctly imported
+import jobList from "../_data/fake-data.json"; // Ensure this is correctly imported
+import Image from "next/image";
 
 const AppliedJobs = () => {
   const [appliedJobs, setAppliedJobs] = useState<JobInterface[]>([]);
@@ -36,6 +37,8 @@ const AppliedJobs = () => {
               key={job.id}
               className="bg-white p-4 shadow-md rounded-lg border border-gray-200"
             >
+                          <Image src={`${job.logo}`} alt="logo" height={40} width={40} />
+              
               <h2 className="text-xl font-semibold text-gray-900">
                 {job.job_title}
               </h2>

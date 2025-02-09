@@ -8,6 +8,7 @@
     "reviews": 42,
     "location": "California, CA",
     "employment_type": "Full Time",
+    "working_schedule": "Internship",
     "seniority_level": "Senior Level",
     "remote": true,
     "salary": "$2.5k/Monthly"
@@ -21,6 +22,7 @@
     "reviews": 58,
     "location": "Redmond, WA",
     "employment_type": "Full Time",
+    "working_schedule": "Internship",
     "seniority_level": "Mid Level",
     "remote": false,
     "salary": "$3.2k/Monthly"
@@ -33,7 +35,8 @@
     "rating": 4.3,
     "reviews": 36,
     "location": "Seattle, WA",
-    "employment_type": "Contract",
+    "employment_type": "Flexible Schedule",
+    "working_schedule": "Full Time",
     "seniority_level": "Junior Level",
     "remote": true,
     "salary": "$2.8k/Monthly"
@@ -46,7 +49,8 @@
     "rating": 4.6,
     "reviews": 50,
     "location": "Menlo Park, CA",
-    "employment_type": "Full Time",
+    "employment_type": "Distant Work",
+    "working_schedule": "Full Time",
     "seniority_level": "Senior Level",
     "remote": false,
     "salary": "$3.0k/Monthly"
@@ -59,7 +63,8 @@
     "rating": 4.2,
     "reviews": 30,
     "location": "Austin, TX",
-    "employment_type": "Part Time",
+    "employment_type": "Full Time",
+    "working_schedule": "Full Time",
     "seniority_level": "Mid Level",
     "remote": false,
     "salary": "$2.0k/Monthly"
@@ -72,7 +77,8 @@
     "rating": 4.8,
     "reviews": 60,
     "location": "Cupertino, CA",
-    "employment_type": "Full Time",
+    "employment_type": "Flexible Schedule",
+    "working_schedule": "Full Time",
     "seniority_level": "Senior Level",
     "remote": false,
     "salary": "$4.0k/Monthly"
@@ -85,7 +91,8 @@
     "rating": 4.5,
     "reviews": 48,
     "location": "Los Gatos, CA",
-    "employment_type": "Full Time",
+    "employment_type": "Distant Work",
+    "working_schedule": "Freelance",
     "seniority_level": "Mid Level",
     "remote": true,
     "salary": "$3.5k/Monthly"
@@ -98,7 +105,8 @@
     "rating": 4.4,
     "reviews": 55,
     "location": "San Jose, CA",
-    "employment_type": "Contract",
+    "employment_type": "Full Time",
+    "working_schedule": "Freelance",
     "seniority_level": "Junior Level",
     "remote": true,
     "salary": "$2.7k/Monthly"
@@ -111,7 +119,8 @@
     "rating": 4.3,
     "reviews": 45,
     "location": "Santa Clara, CA",
-    "employment_type": "Full Time",
+    "employment_type": "Flexible Schedule",
+    "working_schedule": "Internship",
     "seniority_level": "Mid Level",
     "remote": false,
     "salary": "$3.6k/Monthly"
@@ -124,7 +133,8 @@
     "rating": 4.6,
     "reviews": 52,
     "location": "Armonk, NY",
-    "employment_type": "Full Time",
+    "employment_type": "Distant Work",
+    "working_schedule": "Full Time",
     "seniority_level": "Senior Level",
     "remote": true,
     "salary": "$3.8k/Monthly"
@@ -138,6 +148,7 @@
     "reviews": 38,
     "location": "San Francisco, CA",
     "employment_type": "Full Time",
+    "working_schedule": "Internship",
     "seniority_level": "Mid Level",
     "remote": true,
     "salary": "$3.1k/Monthly"
@@ -150,7 +161,8 @@
     "rating": 4.1,
     "reviews": 28,
     "location": "Austin, TX",
-    "employment_type": "Contract",
+    "employment_type": "Flexible Schedule",
+    "working_schedule": "Freelance",
     "seniority_level": "Senior Level",
     "remote": false,
     "salary": "$3.9k/Monthly"
@@ -163,7 +175,8 @@
     "rating": 4.3,
     "reviews": 33,
     "location": "San Jose, CA",
-    "employment_type": "Full Time",
+    "employment_type": "Distant Work",
+    "working_schedule": "Freelance",
     "seniority_level": "Mid Level",
     "remote": true,
     "salary": "$3.4k/Monthly"
@@ -177,6 +190,7 @@
     "reviews": 47,
     "location": "New York, NY",
     "employment_type": "Full Time",
+    "working_schedule": "Contractual",
     "seniority_level": "Senior Level",
     "remote": true,
     "salary": "$4.2k/Monthly"
@@ -189,7 +203,8 @@
     "rating": 4.8,
     "reviews": 120,
     "location": "Mountain View, CA",
-    "employment_type": "Full Time",
+    "employment_type": "Flexible Schedule",
+    "working_schedule": "Contractual",
     "seniority_level": "Mid Level",
     "remote": false,
     "salary": "$8.5k/Monthly"
@@ -202,7 +217,8 @@
     "rating": 4.5,
     "reviews": 85,
     "location": "Seattle, WA",
-    "employment_type": "Full Time",
+    "employment_type": "Distant Work",
+    "working_schedule": "Freelance",
     "seniority_level": "Entry Level",
     "remote": true,
     "salary": "$5.2k/Monthly"
@@ -216,6 +232,7 @@
     "reviews": 60,
     "location": "Austin, TX",
     "employment_type": "Full Time",
+    "working_schedule": "Contractual",
     "seniority_level": "Senior Level",
     "remote": false,
     "salary": "$7.8k/Monthly"
@@ -228,7 +245,8 @@
     "rating": 4.7,
     "reviews": 77,
     "location": "Los Angeles, CA",
-    "employment_type": "Full Time",
+    "employment_type": "Flexible Schedule",
+    "working_schedule": "Freelance",
     "seniority_level": "Mid Level",
     "remote": true,
     "salary": "$9.0k/Monthly"
@@ -241,7 +259,8 @@
     "rating": 4.5,
     "reviews": 95,
     "location": "Menlo Park, CA",
-    "employment_type": "Full Time",
+    "employment_type": "Distant Work",
+    "working_schedule": "Freelance",
     "seniority_level": "Mid Level",
     "remote": true,
     "salary": "$6.8k/Monthly"
@@ -255,6 +274,7 @@
     "reviews": 110,
     "location": "Redmond, WA",
     "employment_type": "Full Time",
+    "working_schedule": "Contractual",
     "seniority_level": "Senior Level",
     "remote": false,
     "salary": "$7.5k/Monthly"
@@ -267,7 +287,8 @@
     "rating": 4.7,
     "reviews": 130,
     "location": "Cupertino, CA",
-    "employment_type": "Full Time",
+    "employment_type": "Flexible Schedule",
+    "working_schedule": "Contractual",
     "seniority_level": "Mid Level",
     "remote": false,
     "salary": "$7.2k/Monthly"
@@ -280,7 +301,8 @@
     "rating": 4.5,
     "reviews": 70,
     "location": "San Francisco, CA",
-    "employment_type": "Full Time",
+    "employment_type": "Distant Work",
+    "working_schedule": "Freelance",
     "seniority_level": "Senior Level",
     "remote": true,
     "salary": "$8.0k/Monthly"
@@ -294,6 +316,7 @@
     "reviews": 95,
     "location": "San Jose, CA",
     "employment_type": "Full Time",
+    "working_schedule": "Contractual",
     "seniority_level": "Mid Level",
     "remote": true,
     "salary": "$6.5k/Monthly"
@@ -306,7 +329,8 @@
     "rating": 4.4,
     "reviews": 80,
     "location": "Austin, TX",
-    "employment_type": "Full Time",
+    "employment_type": "Flexible Schedule",
+    "working_schedule": "Freelance",
     "seniority_level": "Mid Level",
     "remote": false,
     "salary": "$6.9k/Monthly"
@@ -319,7 +343,8 @@
     "rating": 4.7,
     "reviews": 105,
     "location": "San Francisco, CA",
-    "employment_type": "Full Time",
+    "employment_type": "Distant Work",
+    "working_schedule": "Full Time",
     "seniority_level": "Senior Level",
     "remote": true,
     "salary": "$9.5k/Monthly"
@@ -345,7 +370,8 @@
     "rating": 4.8,
     "reviews": 115,
     "location": "Sunnyvale, CA",
-    "employment_type": "Full Time",
+    "employment_type": "Flexible Schedule",
+    "working_schedule": "Full Time",
     "seniority_level": "Senior Level",
     "remote": true,
     "salary": "$10.2k/Monthly"
@@ -358,7 +384,8 @@
     "rating": 4.5,
     "reviews": 90,
     "location": "Palo Alto, CA",
-    "employment_type": "Full Time",
+    "employment_type": "Distant Work",
+    "working_schedule": "Internship",
     "seniority_level": "Senior Level",
     "remote": true,
     "salary": "$9.0k/Monthly"
@@ -372,6 +399,7 @@
     "reviews": 78,
     "location": "San Francisco, CA",
     "employment_type": "Full Time",
+    "working_schedule": "Internship",
     "seniority_level": "Mid Level",
     "remote": true,
     "salary": "$7.8k/Monthly"
@@ -384,7 +412,8 @@
     "rating": 4.4,
     "reviews": 55,
     "location": "San Jose, CA",
-    "employment_type": "Full Time",
+    "employment_type": "Flexible Schedule",
+    "working_schedule": "Internship",
     "seniority_level": "Mid Level",
     "remote": false,
     "salary": "$6.0k/Monthly"
