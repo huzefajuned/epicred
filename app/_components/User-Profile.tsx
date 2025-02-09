@@ -5,6 +5,8 @@ import Image from "next/image";
 const UserProfile = () => {
   const { user } = useAuth();
 
+   if(!user) return null;
+
   return (
     <div className="flex justify-center items-center min-h-screen p-4 gap-5">
       <div className="shadow-lg rounded-lg p-6 max-w-sm w-full text-center border border-gray-200">
